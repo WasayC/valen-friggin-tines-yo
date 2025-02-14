@@ -1,0 +1,50 @@
+/* Default slide layout */
+.slides-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    transition: all 1s ease-in-out;
+}
+
+/* Individual slide */
+.slide {
+    width: 200px; /* Adjust based on your slide images */
+    height: 150px;
+    margin: 5px;
+    transition: transform 1s ease-in-out, opacity 1s;
+}
+
+/* Heart layout (activated when Escape is pressed on last slide) */
+.heart-layout {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.9);
+}
+
+/* Positioning slides in a heart shape */
+.heart-layout .slide:nth-child(1),
+.heart-layout .slide:nth-child(2),
+.heart-layout .slide:nth-child(6),
+.heart-layout .slide:nth-child(7) {
+    grid-column: span 2;
+}
+
+/* Middle row (wider) */
+.heart-layout .slide:nth-child(3),
+.heart-layout .slide:nth-child(4),
+.heart-layout .slide:nth-child(5) {
+    grid-column: span 3;
+}
+
+/* Tapering rows */
+.heart-layout .slide:nth-child(8),
+.heart-layout .slide:nth-child(9) {
+    grid-column: span 2;
+}
+
+.heart-layout .slide:nth-child(10) {
+    grid-column: span 1;
+}
